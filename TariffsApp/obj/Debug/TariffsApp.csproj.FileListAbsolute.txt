@@ -1,0 +1,72 @@
+c:\users\маша\documents\visual studio 2013\Projects\TariffsApp\TariffsApp\bin\Debug\TariffsApp.exe.config
+c:\users\маша\documents\visual studio 2013\Projects\TariffsApp\TariffsApp\bin\Debug\TariffsApp.exe
+c:\users\маша\documents\visual studio 2013\Projects\TariffsApp\TariffsApp\bin\Debug\TariffsApp.pdb
+c:\users\маша\documents\visual studio 2013\Projects\TariffsApp\TariffsApp\obj\Debug\TariffsApp.csprojResolveAssemblyReference.cache
+c:\users\маша\documents\visual studio 2013\Projects\TariffsApp\TariffsApp\obj\Debug\TariffsApp.Form1.resources
+c:\users\маша\documents\visual studio 2013\Projects\TariffsApp\TariffsApp\obj\Debug\TariffsApp.Properties.Resources.resources
+c:\users\маша\documents\visual studio 2013\Projects\TariffsApp\TariffsApp\obj\Debug\TariffsApp.csproj.GenerateResource.Cache
+c:\users\маша\documents\visual studio 2013\Projects\TariffsApp\TariffsApp\obj\Debug\TariffsApp.exe
+c:\users\маша\documents\visual studio 2013\Projects\TariffsApp\TariffsApp\obj\Debug\TariffsApp.pdb
+C:\Users\Маша\Documents\Visual Studio 2013\Projects\TariffsApp\TariffsApp\bin\Debug\Database1.mdf
+C:\Users\Маша\Documents\Visual Studio 2013\Projects\TariffsApp\TariffsApp\bin\Debug\Database1_log.ldf
+D:\MyProjects\TariffsApp\TariffsApp\bin\Debug\TariffsApp.exe.config
+D:\MyProjects\TariffsApp\TariffsApp\obj\Debug\TariffsApp.exe
+D:\MyProjects\TariffsApp\TariffsApp\obj\Debug\TariffsApp.pdb
+D:\MyProjects\TariffsApp\TariffsApp\bin\Debug\Database1.mdf
+D:\MyProjects\TariffsApp\TariffsApp\bin\Debug\Database1_log.ldf
+D:\MyProjects\TariffsApp\TariffsApp\bin\Debug\TariffsApp.exe
+D:\MyProjects\TariffsApp\TariffsApp\bin\Debug\TariffsApp.pdb
+D:\MyProjects\TariffsApp\TariffsApp\obj\Debug\TariffsApp.csprojResolveAssemblyReference.cache
+D:\MyProjects\TariffsApp\TariffsApp\obj\Debug\TariffsApp.Form1.resources
+D:\MyProjects\TariffsApp\TariffsApp\obj\Debug\TariffsApp.Properties.Resources.resources
+D:\MyProjects\TariffsApp\TariffsApp\obj\Debug\TariffsApp.csproj.GenerateResource.Cache
+D:\MyProjects\TariffsApp2\TariffsApp\bin\Debug\TariffsApp.exe.config
+D:\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.exe
+D:\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.pdb
+D:\MyProjects\TariffsApp2\TariffsApp\bin\Debug\Database1.mdf
+D:\MyProjects\TariffsApp2\TariffsApp\bin\Debug\Database1_log.ldf
+D:\MyProjects\TariffsApp2\TariffsApp\bin\Debug\TariffsApp.exe
+D:\MyProjects\TariffsApp2\TariffsApp\bin\Debug\TariffsApp.pdb
+D:\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.csprojResolveAssemblyReference.cache
+D:\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.Form1.resources
+D:\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.Properties.Resources.resources
+D:\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.csproj.GenerateResource.Cache
+D:\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.AboutBox1.resources
+D:\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.Form2.resources
+D:\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.LoginForm.resources
+D:\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.Form3.resources
+D:\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.Form4.resources
+F:\1_MyData\БГУИР\0 Архив\12 сем (диплом и практика)\MyProjects\TariffsApp2\TariffsApp\bin\Debug\Database1.mdf
+F:\1_MyData\БГУИР\0 Архив\12 сем (диплом и практика)\MyProjects\TariffsApp2\TariffsApp\bin\Debug\Database1_log.ldf
+F:\1_MyData\БГУИР\0 Архив\12 сем (диплом и практика)\MyProjects\TariffsApp2\TariffsApp\bin\Debug\TariffsApp.exe.config
+F:\1_MyData\БГУИР\0 Архив\12 сем (диплом и практика)\MyProjects\TariffsApp2\TariffsApp\bin\Debug\TariffsApp.exe
+F:\1_MyData\БГУИР\0 Архив\12 сем (диплом и практика)\MyProjects\TariffsApp2\TariffsApp\bin\Debug\TariffsApp.pdb
+F:\1_MyData\БГУИР\0 Архив\12 сем (диплом и практика)\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.csprojAssemblyReference.cache
+F:\1_MyData\БГУИР\0 Архив\12 сем (диплом и практика)\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.AboutBox1.resources
+F:\1_MyData\БГУИР\0 Архив\12 сем (диплом и практика)\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.Form1.resources
+F:\1_MyData\БГУИР\0 Архив\12 сем (диплом и практика)\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.Form2.resources
+F:\1_MyData\БГУИР\0 Архив\12 сем (диплом и практика)\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.Form3.resources
+F:\1_MyData\БГУИР\0 Архив\12 сем (диплом и практика)\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.Form4.resources
+F:\1_MyData\БГУИР\0 Архив\12 сем (диплом и практика)\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.LoginForm.resources
+F:\1_MyData\БГУИР\0 Архив\12 сем (диплом и практика)\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.Properties.Resources.resources
+F:\1_MyData\БГУИР\0 Архив\12 сем (диплом и практика)\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.csproj.GenerateResource.cache
+F:\1_MyData\БГУИР\0 Архив\12 сем (диплом и практика)\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.csproj.CoreCompileInputs.cache
+F:\1_MyData\БГУИР\0 Архив\12 сем (диплом и практика)\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.exe
+F:\1_MyData\БГУИР\0 Архив\12 сем (диплом и практика)\MyProjects\TariffsApp2\TariffsApp\obj\Debug\TariffsApp.pdb
+D:\Tariffs\TariffsApp\bin\Debug\Database1.mdf
+D:\Tariffs\TariffsApp\bin\Debug\Database1_log.ldf
+D:\Tariffs\TariffsApp\bin\Debug\TariffsApp.exe.config
+D:\Tariffs\TariffsApp\bin\Debug\TariffsApp.exe
+D:\Tariffs\TariffsApp\bin\Debug\TariffsApp.pdb
+D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.csprojAssemblyReference.cache
+D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.AboutBox1.resources
+D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.Form1.resources
+D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.Form2.resources
+D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.Form3.resources
+D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.Form4.resources
+D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.LoginForm.resources
+D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.Properties.Resources.resources
+D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.csproj.GenerateResource.cache
+D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.csproj.CoreCompileInputs.cache
+D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.exe
+D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.pdb
