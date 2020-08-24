@@ -60,13 +60,13 @@ D:\Tariffs\TariffsApp\bin\Debug\TariffsApp.exe
 D:\Tariffs\TariffsApp\bin\Debug\TariffsApp.pdb
 D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.csprojAssemblyReference.cache
 D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.AboutBox1.resources
-D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.Form1.resources
-D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.Form2.resources
-D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.Form3.resources
-D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.Form4.resources
 D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.LoginForm.resources
 D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.Properties.Resources.resources
 D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.csproj.GenerateResource.cache
 D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.csproj.CoreCompileInputs.cache
 D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.exe
 D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.pdb
+D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.TariffMainForm.resources
+D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.ChangePassForm.resources
+D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.AddUserForm.resources
+D:\Tariffs\TariffsApp\obj\Debug\TariffsApp.CopyTariffForm.resources

@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -16,7 +10,7 @@ namespace TariffsApp
     public partial class ChangePassForm : Form
     {
         TariffMainForm OwnerForm;
-        SqlConnection sqlConnect = new SqlConnection(LoginForm.ConnectConst);
+       // SqlConnection sqlConnect = new SqlConnection(LoginForm.ConnectConst);
  
         public ChangePassForm(TariffMainForm ownerForm)
         {
@@ -41,8 +35,8 @@ namespace TariffsApp
         {
             string user_pass = "";
 
-            sqlConnect.Open();
-            SqlCommand cmd = sqlConnect.CreateCommand();
+            //sqlConnect.Open();
+            SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select Password from Users where IdUser =N'" + id_user + "'";
 
@@ -52,7 +46,7 @@ namespace TariffsApp
                 user_pass = reader[0].ToString();
             }
             reader.Close();
-            sqlConnect.Close();
+            //sqlConnect.Close();
 
             return user_pass;           
 
@@ -85,26 +79,26 @@ namespace TariffsApp
                             // в БД:
                             try
                             {                               
-                                sqlConnect.Open();
-                                SqlCommand cmd = sqlConnect.CreateCommand();
+                                //sqlConnect.Open();
+                                SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
                                 cmd.CommandType = CommandType.Text;
                                 cmd.CommandText = "update Users set Password =N'" + LoginForm.CalculateMD5Hash(textBox3.Text) +
                                     "' where IdUser =N'" + LoginForm.user_id + "'";
 
                                 cmd.ExecuteNonQuery();
 
-                                sqlConnect.Close();
+                                //sqlConnect.Close();
 
                             }
                             catch (Exception ex)
                             {
                                 MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-                            finally
-                            {
-                                if (sqlConnect != null)
-                                    sqlConnect.Close();
-                            }
+                            //finally
+                            //{
+                            //    if (sqlConnect != null)
+                            //        sqlConnect.Close();
+                            //}
 
                             MessageBox.Show("Данные успешно изменены!", "Обратите внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();

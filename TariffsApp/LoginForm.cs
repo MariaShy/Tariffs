@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 
@@ -18,6 +13,8 @@ namespace TariffsApp
         public static string user_role;
         public static string ConnectConst = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Tariffs\TariffsApp\Database1.mdf;Integrated Security=True";
 
+        public static SqlConnection sqlConnect = new SqlConnection(ConnectConst);
+        
         //считает хеш для пароля
         public static string CalculateMD5Hash(string input)
         {
@@ -34,18 +31,17 @@ namespace TariffsApp
             return sb.ToString();
         }
 
-        SqlConnection sqlConnect = new SqlConnection(ConnectConst);
-
         public LoginForm()
         {
             InitializeComponent();
+            sqlConnect.Open();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             user_id = ""; 
             user_role = "";
-            sqlConnect.Open();
+            
             SqlCommand cmd = sqlConnect.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select IDUser, Role from Users where UserName = N'" + 
@@ -59,16 +55,9 @@ namespace TariffsApp
                 MessageBox.Show("Ваша роль: "+user_role, "Права доступа", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
            reader.Close();
-           sqlConnect.Close();
+          
 
-           if (user_role == "Administrator" || user_role == "Constructor" || user_role == "Manager")
-            
-               /*cmd.ExecuteNonQuery(); -удалить
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);            
-            sqlConnect.Close();            
-            if (dt.Rows[0].ToString() == "admin")*/
+           if (user_role == "Administrator" || user_role == "Constructor" || user_role == "Manager")            
             {
             // если проверка прошла успешно:
             TariffMainForm MainForm = new TariffMainForm();
@@ -85,6 +74,7 @@ namespace TariffsApp
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+            sqlConnect.Close();
         }
     }
 }

@@ -1,19 +1,13 @@
 ﻿using System;
-//using System.Collections.Generic;
-//using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-//using System.Drawing;
-//using System.Linq;
-//using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TariffsApp
 {   
     public partial class TariffMainForm : Form
     {
-        SqlConnection sqlConnect = new SqlConnection(LoginForm.ConnectConst);
+        //SqlConnection sqlConnect = new SqlConnection(LoginForm.ConnectConst);
         public static string tariff_id;
         
         public string flag = ""; // флаг для контроля нажатия кнопки
@@ -64,16 +58,17 @@ namespace TariffsApp
         private void Form1Closing(object sender, System.EventArgs e)
         {
             Application.Exit();
+            LoginForm.sqlConnect.Close();
         }
 
         public void disp_data()
         {
-            if (sqlConnect != null)
-                sqlConnect.Close(); 
+            //if (LoginForm.sqlConnect != null)
+            //    LoginForm.sqlConnect.Close(); 
 
-            sqlConnect.Open();
+            //sqlConnect.Open();
 
-            SqlCommand cmd = sqlConnect.CreateCommand();
+            SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from Tariffs";
 
@@ -84,7 +79,7 @@ namespace TariffsApp
             da.Fill(dt);
             dataGridView1.DataSource = dt;
 
-            sqlConnect.Close();
+            //sqlConnect.Close();
             flag = "";
             
         } // - просмотр таблицы Тарифы
@@ -93,8 +88,8 @@ namespace TariffsApp
         {
             string existing_fee_id = "";
             
-            sqlConnect.Open();
-            SqlCommand cmd = sqlConnect.CreateCommand();
+            //sqlConnect.Open();
+            SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select Id from Fees where FeeName =N'" + fee_name + "'";
                        
@@ -104,7 +99,7 @@ namespace TariffsApp
                 existing_fee_id = reader[0].ToString();                
             }
            reader.Close();
-           sqlConnect.Close();
+           //sqlConnect.Close();
 
            return existing_fee_id;
 
@@ -151,14 +146,14 @@ namespace TariffsApp
         {
             try
             {
-                sqlConnect.Open();
-                SqlCommand cmd = sqlConnect.CreateCommand();
+                //sqlConnect.Open();
+                SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "insert into Tariffs values(N'" + comboBox1.Text + "',N'" + textBox1.Text + "',N'" + textBox2.Text + "',N'" + comboBox2.Text + "','',N'В разработке','06.20.2018')";
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Создана новая запись в таблице Тарифов.", "Обратите внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                sqlConnect.Close();
+                //sqlConnect.Close();
 
                 disp_data();
             }
@@ -166,11 +161,11 @@ namespace TariffsApp
             {
                 MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                if (sqlConnect != null)
-                    sqlConnect.Close();
-            }
+            //finally
+            //{
+            //    if (sqlConnect != null)
+            //        sqlConnect.Close();
+            //}
         }
         
         // (дополнительно) при изменении услуги заполнить текущие параметры по ID:
@@ -182,8 +177,8 @@ namespace TariffsApp
             }
             else
             {
-                sqlConnect.Open();
-                SqlCommand cmd = sqlConnect.CreateCommand();
+                //sqlConnect.Open();
+                SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "select Operation,Parameter  from Tariffs where  IdTariff=N'" + textBox9.Text + "'";
 
@@ -194,7 +189,7 @@ namespace TariffsApp
                     textBox19.Text = reader[1].ToString();
                 }
                 reader.Close();
-                sqlConnect.Close();
+                //sqlConnect.Close();
             }
         }
 
@@ -205,14 +200,14 @@ namespace TariffsApp
             {
                 try
                 {
-                    sqlConnect.Open();
-                    SqlCommand cmd = sqlConnect.CreateCommand();
+                    //sqlConnect.Open();
+                    SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = "update Tariffs set Operation =N'" + textBox3.Text + "', Parameter=N'" + textBox4.Text + "' where IdTariff =N'" + textBox9.Text + "'";
 
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Обновлена услуга в таблице Тарифов.", "Обратите внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    sqlConnect.Close();
+                    //sqlConnect.Close();
 
                     disp_data();
                 }
@@ -220,11 +215,11 @@ namespace TariffsApp
                 {
                     MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                finally
-                {
-                    if (sqlConnect != null)
-                        sqlConnect.Close();
-                }
+                //finally
+                //{
+                //    if (sqlConnect != null)
+                //        sqlConnect.Close();
+                //}
             }
             else
             {
@@ -323,8 +318,8 @@ namespace TariffsApp
                     
                     existing_fee = new_fee_check(new_fee);
 
-                    sqlConnect.Open();
-                    SqlCommand cmd = sqlConnect.CreateCommand();
+                    //sqlConnect.Open();
+                    SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
                     cmd.CommandType = CommandType.Text;                    
                     // если FeeName раньше не встречалось, то дополнительно создать новый ID в Fees
                     if (existing_fee == "")
@@ -348,7 +343,7 @@ namespace TariffsApp
 
                     cmd.ExecuteNonQuery();
 
-                    sqlConnect.Close();
+                    //sqlConnect.Close();
                             
                     disp_data();
                 }
@@ -356,11 +351,11 @@ namespace TariffsApp
                 {
                     MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                finally
-                {
-                    if (sqlConnect != null)
-                        sqlConnect.Close();
-                }
+                //finally
+                //{
+                //    if (sqlConnect != null)
+                //        sqlConnect.Close();
+                //}
             }
             else
             {
@@ -379,8 +374,8 @@ namespace TariffsApp
         // показать тарифы в разработке для удаления:
         private void button7_Click(object sender, EventArgs e)
         {
-            sqlConnect.Open();
-            SqlCommand cmd = sqlConnect.CreateCommand();
+            //sqlConnect.Open();
+            SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from Tariffs where Status = N'В разработке'";
 
@@ -391,7 +386,7 @@ namespace TariffsApp
             da.Fill(dt);
             dataGridView1.DataSource = dt;
 
-            sqlConnect.Close();
+            //sqlConnect.Close();
             
             flag = "del";
             /*textBox11.Visible = true;
@@ -407,14 +402,14 @@ namespace TariffsApp
                 try
                 {
                     string status = "В разработке"; // контроль на статус
-                    sqlConnect.Open();
-                    SqlCommand cmd = sqlConnect.CreateCommand();
+                    //sqlConnect.Open();
+                    SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = "delete from Tariffs where IdTariff=N'" + textBox11.Text + "' and Status=N'" +status+ "'";
 
                     cmd.ExecuteNonQuery();
                     //MessageBox.Show("Удалена запись в таблице Тарифов, ID= " + textBox11.Text, "Обратите внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    sqlConnect.Close();
+                    //sqlConnect.Close();
 
                     disp_data();
                 }
@@ -422,11 +417,11 @@ namespace TariffsApp
                 {
                     MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                finally
-                {
-                    if (sqlConnect != null)
-                        sqlConnect.Close();
-                }
+                //finally
+                //{
+                //    if (sqlConnect != null)
+                //        sqlConnect.Close();
+                //}
             }
             else
             {
@@ -438,8 +433,8 @@ namespace TariffsApp
         // показать тарифы в разработке для перевода в действие:
         private void button8_Click(object sender, EventArgs e)
         {
-            sqlConnect.Open();
-            SqlCommand cmd = sqlConnect.CreateCommand();
+            //sqlConnect.Open();
+            SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from Tariffs where Status = N'В разработке'";
 
@@ -450,7 +445,7 @@ namespace TariffsApp
             da.Fill(dt);
             dataGridView1.DataSource = dt;
 
-            sqlConnect.Close();
+            //sqlConnect.Close();
                         
             /*button9.Visible = true;*/
         }
@@ -460,14 +455,14 @@ namespace TariffsApp
         {
             try
             {
-                sqlConnect.Open();
-                SqlCommand cmd = sqlConnect.CreateCommand();
+                //sqlConnect.Open();
+                SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "update Tariffs set Status =N'На согласовании', Date='" + dateTimePicker1.Text + "'  where Status =N'В разработке'";
 
                 cmd.ExecuteNonQuery();
 
-                sqlConnect.Close();
+                //sqlConnect.Close();
                 MessageBox.Show("Тарифы в разработке были переведены на согласование руководителя.", "Обратите внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 disp_data();
             }
@@ -475,19 +470,19 @@ namespace TariffsApp
             {
                 MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                if (sqlConnect != null)
-                    sqlConnect.Close();
-            }
+            //finally
+            //{
+            //    if (sqlConnect != null)
+            //        sqlConnect.Close();
+            //}
             
         }
 
         // показать действующие тарифы для перевода в архив:
         private void button11_Click(object sender, EventArgs e)
         {
-            sqlConnect.Open();
-            SqlCommand cmd = sqlConnect.CreateCommand();
+            //sqlConnect.Open();
+            SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from Tariffs where Status = N'Действует'";
 
@@ -498,7 +493,7 @@ namespace TariffsApp
             da.Fill(dt);
             dataGridView1.DataSource = dt;
 
-            sqlConnect.Close();
+            //sqlConnect.Close();
 
         }
 
@@ -507,14 +502,14 @@ namespace TariffsApp
         {
             try
             {
-                sqlConnect.Open();
-                SqlCommand cmd = sqlConnect.CreateCommand();
+                //sqlConnect.Open();
+                SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "update Tariffs set Status =N'На согласовании. Действует', Date='" + dateTimePicker1.Text + "'  where Status =N'Действует'and IdTariff='"+textBox13.Text+"'";
 
                 cmd.ExecuteNonQuery();
 
-                sqlConnect.Close();
+                //sqlConnect.Close();
                 MessageBox.Show("Тарифы в действии были переведены на согласование руководителя.", "Обратите внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 disp_data();
             }
@@ -522,18 +517,18 @@ namespace TariffsApp
             {
                 MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                if (sqlConnect != null)
-                    sqlConnect.Close();
-            }
+            //finally
+            //{
+            //    if (sqlConnect != null)
+            //        sqlConnect.Close();
+            //}
         }
 
         // показать тарифы на согласовании:
         private void button13_Click(object sender, EventArgs e)
         {
-            sqlConnect.Open();
-            SqlCommand cmd = sqlConnect.CreateCommand();
+            //sqlConnect.Open();
+            SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from Tariffs where Status like N'На согласовании%'";
 
@@ -544,7 +539,7 @@ namespace TariffsApp
             da.Fill(dt);
             dataGridView1.DataSource = dt;
 
-            sqlConnect.Close();
+            //sqlConnect.Close();
 
         }
 
@@ -553,15 +548,15 @@ namespace TariffsApp
         {
             try
             {
-                sqlConnect.Open();
-                SqlCommand cmd = sqlConnect.CreateCommand();
+                //sqlConnect.Open();
+                SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "update Tariffs set Status =N'Действует' where Status =N'На согласовании'" +
                     "update Tariffs set Status =N'Архивный' where Status =N'На согласовании. Действует'";
 
                 cmd.ExecuteNonQuery();
 
-                sqlConnect.Close();
+                //sqlConnect.Close();
                 MessageBox.Show("Все тарифы, находящиеся на согласовании, были утверждены.", "Обратите внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 disp_data();
             }
@@ -569,11 +564,11 @@ namespace TariffsApp
             {
                 MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                if (sqlConnect != null)
-                    sqlConnect.Close();
-            }
+            //finally
+            //{
+            //    if (sqlConnect != null)
+            //        sqlConnect.Close();
+            //}
         }
 
         // отклонить все:
@@ -581,15 +576,15 @@ namespace TariffsApp
         {
             try
             {
-                sqlConnect.Open();
-                SqlCommand cmd = sqlConnect.CreateCommand();
+                //sqlConnect.Open();
+                SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "update Tariffs set Status =N'В разработке' where Status =N'На согласовании'" +
                     "update Tariffs set Status =N'Действует' where Status =N'На согласовании. Действует'";
 
                 cmd.ExecuteNonQuery();
 
-                sqlConnect.Close();
+                //sqlConnect.Close();
                 MessageBox.Show("Все тарифы, находящиеся на согласовании, были отклонены.", "Обратите внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 disp_data();
             }
@@ -597,11 +592,11 @@ namespace TariffsApp
             {
                 MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                if (sqlConnect != null)
-                    sqlConnect.Close();
-            }
+            //finally
+            //{
+            //    if (sqlConnect != null)
+            //        sqlConnect.Close();
+            //}
         }
 
         // отклонить конкретный тариф:
@@ -609,15 +604,15 @@ namespace TariffsApp
         {
             try
             {
-                sqlConnect.Open();
-                SqlCommand cmd = sqlConnect.CreateCommand();
+                //sqlConnect.Open();
+                SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "update Tariffs set Status =N'В разработке' where Status =N'На согласовании' and IdTariff='"+textBox14.Text+"'" +
                     "update Tariffs set Status =N'Действует' where Status =N'На согласовании. Действует'and IdTariff='"+textBox14.Text+"'";
 
                 cmd.ExecuteNonQuery();
 
-                sqlConnect.Close();
+                //sqlConnect.Close();
                 MessageBox.Show("Тариф, ID =" + textBox14.Text + ", находящийся на согласовании, был отклонен.", "Обратите внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 disp_data();
             }
@@ -625,11 +620,11 @@ namespace TariffsApp
             {
                 MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                if (sqlConnect != null)
-                    sqlConnect.Close();
-            }
+            //finally
+            //{
+            //    if (sqlConnect != null)
+            //        sqlConnect.Close();
+            //}
         }
         
         //поиск: ВНИМАНИЕ! не хватает множественности посика по нескольким параметрам (2, 3... но не все)
@@ -641,8 +636,8 @@ namespace TariffsApp
             }
             else
             {
-                sqlConnect.Open();
-                SqlCommand cmd = sqlConnect.CreateCommand();
+                //sqlConnect.Open();
+                SqlCommand cmd = LoginForm.sqlConnect.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 // показать все возможные варианты задания поиска:
 
@@ -728,15 +723,15 @@ namespace TariffsApp
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
 
-                sqlConnect.Close();
+                //sqlConnect.Close();
             }
         }
  
         // организация ролевых доступов к элементам формы 
-        /*private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {                  
-            //if (role_check(LoginForm.user_id)== "Manager")
-            if (user_role == "Manager")
+            
+            if (LoginForm.user_role == "Manager")
             {
                 пользователиToolStripMenuItem.Visible = false;
                 button1.Visible = false;
@@ -749,9 +744,8 @@ namespace TariffsApp
                 button14.Visible = true;
                 button15.Visible = true;
                 button12.Visible = true;
-            }
-            //else if (role_check(LoginForm.user_id)== "Constructor")
-            else if (user_role == "Constructor")
+            }           
+            else if (LoginForm.user_role == "Constructor")
             {
                 пользователиToolStripMenuItem.Visible = false;
                 button12.Visible = false;
@@ -770,7 +764,7 @@ namespace TariffsApp
                 button14.Visible = false;
                 button15.Visible = false;                
             }
-        }*/
+        }
 
     }
 }
